@@ -1,11 +1,13 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
+	PImage img;
 
     boolean[] keys = new boolean[1024];
 
@@ -27,15 +29,16 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        size(1200, 553);
         // Use fullscreen instead of size to make your interface fullscreen
+		img = loadImage("images/candybackground.jpg");
         //fullScreen(P3D); 
     }
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .75f, 50);
+        b = new Button(this, 50, 50, 300, 200, "I am a button");
+        mc = new MovingCircle(this, width / 4, height * .85f, 60);
         radar = new Radar(this, 1, width / 2, height / 2, 100);
     }
 
@@ -43,7 +46,7 @@ public class UI extends PApplet
 
     public void draw()
     {
-        background(0);
+        background(img);
         b.render();
 
         mc.update();
