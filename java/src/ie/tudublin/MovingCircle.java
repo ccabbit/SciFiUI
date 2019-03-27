@@ -28,14 +28,14 @@ public class MovingCircle
         ui.fill(255);
         // Static field
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-        ui.text("YUM", x, y);
+        ui.text("Yum", x, y);
 
     }
 
     public void update()
     {
         x += dx;
-        if ((x > ui.width - radius) || (x < radius))
+        if ((x < 400) || (x < radius)||(x > ui.width - radius))
         {
             dx *= -1;
         }
