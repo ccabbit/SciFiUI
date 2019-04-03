@@ -8,6 +8,7 @@ public class UI extends PApplet
     Plate p;
     MovingSS ms;
 	PImage img;
+	EnergyB e1;
 
     boolean[] keys = new boolean[1024];
 
@@ -40,6 +41,7 @@ public class UI extends PApplet
         p = new Plate(this, 0, 0, 390, 675, "");
         ms = new MovingSS(this, width / 2, height * .85f, 60);
         radar = new Radar(this, 1, 120, height / 5, 100);
+		e1 = new EnergyB(this, 250, 30, 70, 20, "1"); 
     }
 
     Radar radar;
@@ -48,6 +50,7 @@ public class UI extends PApplet
     {
         background(img);
         p.render();
+		e1.render();
 
         ms.update();
         ms.render();
