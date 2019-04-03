@@ -5,8 +5,8 @@ import processing.core.PImage;
 
 public class UI extends PApplet
 {
-    Button b;
-    MovingCircle mc;
+    Plate p;
+    MovingSS ms;
 	PImage img;
 
     boolean[] keys = new boolean[1024];
@@ -29,17 +29,17 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1200, 553);
+        size(1200, 675);
         // Use fullscreen instead of size to make your interface fullscreen
-		img = loadImage("images/candybackground.jpg");
+		img = loadImage("images/galaxybg.jpg");
         //fullScreen(P3D); 
     }
 
     public void setup()
     {
-        b = new Button(this, 0, 0, 390, 553, "I am a button");
-        mc = new MovingCircle(this, width / 2, height * .85f, 60);
-        radar = new Radar(this, 1, width / 2, height / 2, 100);
+        p = new Plate(this, 0, 0, 390, 675, "");
+        ms = new MovingSS(this, width / 2, height * .85f, 60);
+        radar = new Radar(this, 1, 120, height / 5, 100);
     }
 
     Radar radar;
@@ -47,10 +47,10 @@ public class UI extends PApplet
     public void draw()
     {
         background(img);
-        b.render();
+        p.render();
 
-        mc.update();
-        mc.render();
+        ms.update();
+        ms.render();
 
         radar.update();
         radar.render();
