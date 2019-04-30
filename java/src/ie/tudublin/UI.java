@@ -39,7 +39,7 @@ public class UI extends PApplet
     public void setup()
     {
         p = new Plate(this, 0, 0, 390, 675, "");
-        ms = new MovingSS(this, width / 2, height * .85f, 60);
+        //ms = new MovingSS(this, 785, 625, 795, 585, 805, 625);
         radar = new Radar(this, 1, 120, height / 5, 100);
 		e1 = new EnergyB(this, 250, 30, 70, 20, "1"); 
     }
@@ -51,12 +51,28 @@ public class UI extends PApplet
         background(img);
         p.render();
 		e1.render();
-
-        ms.update();
-        ms.render();
-
         radar.update();
         radar.render();
+        translate(mouseX, mouseY);
+  fill(102);
+  stroke(255);
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+        //ms.
+        //ms.render();
+
+       
 
         if (checkKey(LEFT))
         {
