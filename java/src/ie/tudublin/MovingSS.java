@@ -32,7 +32,10 @@ public class MovingSS
     {
         ui.stroke(255);
         //ui.noFill();
+       // ui.beginShape();
         ui.triangle(x1, y1, x2, y2, x3, y3);
+    
+        //ui.endShape(CLOSE);
         ui.fill(255);
         // Static field
        // ui.textAlign(PApplet.CENTER, PApplet.CENTER);

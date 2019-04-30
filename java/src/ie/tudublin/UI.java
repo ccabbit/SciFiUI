@@ -53,22 +53,24 @@ public class UI extends PApplet
 		e1.render();
         radar.update();
         radar.render();
-        translate(mouseX, mouseY);
-  fill(102);
-  stroke(255);
-  strokeWeight(2);
-  beginShape();
-  vertex(0, -50);
-  vertex(14, -20);
-  vertex(47, -15);
-  vertex(23, 7);
-  vertex(29, 40);
-  vertex(0, 25);
-  vertex(-29, 40);
-  vertex(-23, 7);
-  vertex(-47, -15);
-  vertex(-14, -20);
-  endShape(CLOSE);
+        if(mouseX>390 && mouseX<1200)
+        {
+            translate(mouseX, mouseY);
+            fill(102);
+            stroke(255);
+            strokeWeight(2);
+            beginShape();
+            vertex(0, -20);
+            vertex(10, 10);
+            vertex(30, 20);
+            vertex(20, 20);
+            vertex(10, 25);
+            vertex(-10, 25);
+            vertex(-20, 20);
+            vertex(-30, 20);
+            vertex(-10, 10);
+            endShape(CLOSE);
+        }
         //ms.
         //ms.render();
 
