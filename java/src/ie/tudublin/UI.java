@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -9,6 +10,8 @@ public class UI extends PApplet
     MovingSS ms;
 	PImage img;
 	EnergyB e1;
+    //ArrayList<Comet> cm = new ArrayList<Comet>();
+    Comet[] comets = new Comet[6];
 
     boolean[] keys = new boolean[1024];
 
@@ -33,7 +36,7 @@ public class UI extends PApplet
         size(1200, 675);
         // Use fullscreen instead of size to make your interface fullscreen
 		img = loadImage("images/galaxybg.jpg");
-        //fullScreen(P3D); 
+        //fullScreen(); 
     }
 
     public void setup()
@@ -42,6 +45,12 @@ public class UI extends PApplet
         //ms = new MovingSS(this, 785, 625, 795, 585, 805, 625);
         radar = new Radar(this, 1, 120, height / 5, 100);
 		e1 = new EnergyB(this, 250, 30, 70, 20, "1"); 
+       // cm.add(new Comet(this, random(390,width), 0, 65, 255, 250, 250));
+        
+        for(int i = 0; i < comets.length; i++)
+        {
+            comets[i] = new Comet(this, random(390,width), 0, 65, 255, 250, 250);
+        }
     }
 
     Radar radar;
@@ -51,8 +60,24 @@ public class UI extends PApplet
         background(img);
         p.render();
 		e1.render();
+        //e2 render();
         radar.update();
         radar.render();
+        for(int i = 0; i < comets.length; i++)
+        {
+            comets[i].render();
+            comets[i].move1();
+        }
+
+        // for(Comet c:cm)
+        // {
+        //     c.render();
+        //     float move = random(0,1);
+        //     if(move == 0)
+        //     {
+        //         c.move1();
+        //     }
+        // }
         if(mouseX>390 && mouseX<1200)
         {
             translate(mouseX, mouseY);
@@ -71,6 +96,8 @@ public class UI extends PApplet
             vertex(-10, 10);
             endShape(CLOSE);
         }
+
+        
         //ms.
         //ms.render();
 

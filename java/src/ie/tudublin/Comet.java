@@ -11,9 +11,11 @@ public class Comet
     private float b;
     private float diameter;
     private float radius;
+    public float dropSpeed = 5;
+    
     UI ui;
 
-    public Comet (UI ui,float x, float y, float diameter, float r, float g, floatb)
+    public Comet (UI ui,float x, float y, float diameter, float r, float g, float b)
     {
         this.ui = ui;
         this.x = x;
@@ -22,5 +24,24 @@ public class Comet
         this.g = g;
         this.b = b;
         this.diameter = diameter;
+    }
+
+
+    public void render()
+    {
+        ui.stroke(0);
+        ui.fill(r,g,b);
+        ui.ellipse(x,y,diameter, diameter);
+    }
+
+    //dropSpeed = 5;
+    public void move1()
+    {
+        y = y + ui.random(1,10);
+        if(y < 0 || y > ui.height)
+        {
+            y = 0;
+            x = ui.random(420,1170);
+        }
     }
 }
