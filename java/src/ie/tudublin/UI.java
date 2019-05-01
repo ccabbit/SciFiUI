@@ -134,7 +134,7 @@ public class UI extends PApplet
 
         
     
-        if(mouseX>390 && mouseX<1200)
+        if(mouseX>390 && mouseX<1100)
         {
             translate(mouseX, mouseY);
             fill(102);
