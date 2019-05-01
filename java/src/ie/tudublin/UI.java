@@ -24,7 +24,6 @@ public class UI extends PApplet
     MovingSS ms;
 	PImage img;
 	EnergyB[] eB = new EnergyB[5];
-    //ArrayList<Comet> cm = new ArrayList<Comet>();
     Comet[] comets = new Comet[6];
 
     boolean[] keys = new boolean[1024];
@@ -64,7 +63,7 @@ public class UI extends PApplet
             eB[i] = new EnergyB(this, 250, 30 * (i+1), 70, 20, "" + (i+1)); 
         }
        
-       // cm.add(new Comet(this, random(390,width), 0, 65, 255, 250, 250));
+       
         dt1= new Dot(this, 100, 100, 10, 220, 20, 60);
         dt2= new Dot(this, 130, 90, 10, 220, 20, 60);
         dt3= new Dot(this, 120, 200, 10, 220, 20, 60);
@@ -99,7 +98,6 @@ public class UI extends PApplet
         {
 		eB[i].render();
         }
-        //e2 render();
         
         radar.update();
         radar.render();
@@ -128,15 +126,8 @@ public class UI extends PApplet
             sq1[i].render();
         }
 
-        // for(Comet c:cm)
-        // {
-        //     c.render();
-        //     float move = random(0,1);
-        //     if(move == 0)
-        //     {
-        //         c.move1();
-        //     }
-        // }
+        
+    
         if(mouseX>390 && mouseX<1200)
         {
             translate(mouseX, mouseY);
@@ -158,8 +149,7 @@ public class UI extends PApplet
         }
 
         
-        //ms.
-        //ms.render();
+        
 
        
 

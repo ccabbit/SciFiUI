@@ -32,13 +32,13 @@ public class MovingSq
         ui.fill(r,g,b);
         ui.stroke(0);
         ui.rect(x, y, width, height);
-       // ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+       
     }
 
     public void update()
     {
         x = x + dx;
-        if ((x < 50) || (x > 330))//||(x > ui.width - radius))
+        if ((x < 50) || (x > 330))
        {
            dx *= -1;
        }

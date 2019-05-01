@@ -34,7 +34,6 @@ public class Comet
         ui.ellipse(x,y,diameter, diameter);
     }
 
-    //dropSpeed = 5;
     public void move1()
     {
         y = y + ui.random(1,10);
