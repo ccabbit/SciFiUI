@@ -26,7 +26,6 @@ public class Comet
         this.diameter = diameter;
     }
 
-
     public void render()
     {
         ui.stroke(220,20,60);
@@ -40,7 +39,7 @@ public class Comet
         if(y < 0 || y > ui.height)
         {
             y = 0;
-            x = ui.random(420,1170);
+            x = ui.random(440,1070);
         }
     }
 }

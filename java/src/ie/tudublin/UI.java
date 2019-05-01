@@ -47,7 +47,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-       size(1000, 562);
+       size(1100, 618);
         // Use fullscreen instead of size to make your interface fullscreen
 		img = loadImage("images/galaxybg.jpg");
         //fullScreen(); 
@@ -74,9 +74,9 @@ public class UI extends PApplet
         dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
         dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
 
-        bigCircle= new Dot(this, 190, 430, 220, 46, 139, 87);
+        bigCircle= new Dot(this, 190, 460, 220, 46, 139, 87);
 
-        ms = new MovingSS(this, 130, 470, 190, 340, 260, 470);
+        ms = new MovingSS(this, 130, 500, 190, 370, 260, 500);
  
         for(int i =0; i < sq1.length; i++)
         {
