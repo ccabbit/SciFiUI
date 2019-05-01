@@ -5,14 +5,15 @@ import processing.core.PApplet;
 public class MovingSS
 {
     private float x1;
+    private float dy1 = 1;
+    private float dy2 = -1;
     private float dx = 1;
     private float y1;
     private float x2;
     private float y2;
     private float x3;
     private float y3;
-    private float diameter;
-    private float radius;
+
     UI ui;
 
     public MovingSS(UI ui, float x1, float y1, float x2, float y2, float x3, float y3)
@@ -24,6 +25,9 @@ public class MovingSS
         this.y2 = y2;
         this.x3 = x3;
         this.y3 = y3;
+        this.dy1 = dy1;
+        this.dy2 = dy2;
+        this.dx = dx;
         //this.diameter = diameter;
         //radius = diameter / 2;
     }
@@ -31,24 +35,38 @@ public class MovingSS
     public void render()
     {
         ui.stroke(255);
-        //ui.noFill();
-       // ui.beginShape();
+        ui.fill(102);
+        
         ui.triangle(x1, y1, x2, y2, x3, y3);
     
-        //ui.endShape(CLOSE);
-        ui.fill(255);
-        // Static field
-       // ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-       // ui.text("SS", x, y);
+        
+       
+        
 
     }
 
     public void update()
     {
-       // x += dx;
-       // if ((x < 417) || (x < radius)||(x > ui.width - radius))
-      //  {
-       //     dx *= -1;
-      //  }
+        x1 += dx;
+        x3 += dx; 
+        if ((x1 < 95) || (x1 >155))
+       {
+          dx *= -1;
+        }
+
+       y1 += dy1;
+       y3 += dy1;
+       if ((y1 < 540)||(y1 > 560))
+       {
+           dy1 *= -1;
+       }
+
+    //    y3 += dy2;
+    //    if ((y3 < 540)||(y3 > 560))
+    //    {
+    //        dy2 *= -1;
+    //    }
+
+
     }
 }

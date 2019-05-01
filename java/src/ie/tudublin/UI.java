@@ -13,9 +13,12 @@ public class UI extends PApplet
     Dot dt4;
     Dot dt5;
     Dot dt6;
+
+    Dot bigCircle;
     //Plates
     Plate p1;
     Plate p2;
+
     
     MovingSq[] sq1 = new MovingSq[4];
     MovingSS ms;
@@ -55,7 +58,6 @@ public class UI extends PApplet
         p1 = new Plate(this, 0, 0, 390, 675, 105,105,105);
         p2 = new Plate(this, 50, 300, 290, 50, 0, 0, 0);
 
-        //ms = new MovingSS(this, 785, 625, 795, 585, 805, 625);
         radar = new Radar(this, 1, 120, height / 5, 100);
 		for(int i =0; i < eB.length; i++)
         {
@@ -70,6 +72,10 @@ public class UI extends PApplet
         dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
         dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
 
+        bigCircle= new Dot(this, 190, 500, 250, 46, 139, 87);
+
+        ms = new MovingSS(this, 125, 540, 190, 410, 255, 540);
+ 
         for(int i =0; i < sq1.length; i++)
         {
             sq1[i] = new MovingSq(this, 52 + (i*20), 300, 8 , 50, 255, 255, i * 50);
@@ -104,6 +110,11 @@ public class UI extends PApplet
         dt4.render();
         dt5.render();
         dt6.render();
+
+        bigCircle.render();
+
+        ms.render();
+        ms.update();
 
         for(int i = 0; i < comets.length; i++)
         {
