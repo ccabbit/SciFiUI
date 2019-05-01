@@ -57,7 +57,7 @@ public class UI extends PApplet
     public void setup()
     {
         p1 = new Plate(this, 0, 0, 390, 675, 105,105,105);
-        p2 = new Plate(this, 50, 300, 290, 50, 0, 0, 0);
+        p2 = new Plate(this, 50, 250, 290, 50, 0, 0, 0);
         p3 = new Plate(this, 260, 20, 110, 160, 192,192,192);
 
         radar = new Radar(this, 1, 120, height / 5, 100);
@@ -80,7 +80,7 @@ public class UI extends PApplet
  
         for(int i =0; i < sq1.length; i++)
         {
-            sq1[i] = new MovingSq(this, 52 + (i*20), 300, 8 , 50, 255, 255, i * 50);
+            sq1[i] = new MovingSq(this, 52 + (i*20), 250, 8 , 50, 255, 255, i * 50);
         }
 
         for(int i = 0; i < comets.length; i++)
