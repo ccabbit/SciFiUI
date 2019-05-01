@@ -6,13 +6,18 @@ import processing.core.PImage;
 
 public class UI extends PApplet
 {
+    //Dots
     Dot dt1;
     Dot dt2;
     Dot dt3;
     Dot dt4;
     Dot dt5;
     Dot dt6;
-    Plate p;
+    //Plates
+    Plate p1;
+    Plate p2;
+    
+    MovingSq[] sq1 = new MovingSq[4];
     MovingSS ms;
 	PImage img;
 	EnergyB[] eB = new EnergyB[5];
@@ -47,7 +52,9 @@ public class UI extends PApplet
 
     public void setup()
     {
-        p = new Plate(this, 0, 0, 390, 675, "");
+        p1 = new Plate(this, 0, 0, 390, 675, 105,105,105);
+        p2 = new Plate(this, 50, 300, 290, 50, 0, 0, 0);
+
         //ms = new MovingSS(this, 785, 625, 795, 585, 805, 625);
         radar = new Radar(this, 1, 120, height / 5, 100);
 		for(int i =0; i < eB.length; i++)
@@ -63,6 +70,11 @@ public class UI extends PApplet
         dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
         dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
 
+        for(int i =0; i < sq1.length; i++)
+        {
+            sq1[i] = new MovingSq(this, 52 + (i*20), 300, 8 , 50, 255, 255, i * 50);
+        }
+
         for(int i = 0; i < comets.length; i++)
         {
             comets[i] = new Comet(this, random(390,width), 0, 65, 226, 88, 34);
@@ -74,7 +86,8 @@ public class UI extends PApplet
     public void draw()
     {
         background(img);
-        p.render();
+        p1.render();
+        p2.render();
         //energybar
         for(int i =0; i < eB.length; i++)
         {
@@ -96,6 +109,12 @@ public class UI extends PApplet
         {
             comets[i].render();
             comets[i].move1();
+        }
+        
+        for(int i = 0; i < sq1.length; i++)
+        {
+            sq1[i].update();
+            sq1[i].render();
         }
 
         // for(Comet c:cm)
@@ -120,6 +139,7 @@ public class UI extends PApplet
             vertex(20, 20);
             vertex(10, 25);
             vertex(-10, 25);
+
             vertex(-20, 20);
             vertex(-30, 20);
             vertex(-10, 10);
