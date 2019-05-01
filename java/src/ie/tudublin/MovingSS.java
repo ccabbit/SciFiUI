@@ -28,8 +28,6 @@ public class MovingSS
         this.dy1 = dy1;
         this.dy2 = dy2;
         this.dx = dx;
-        //this.diameter = diameter;
-        //radius = diameter / 2;
     }
     
     public void render()
@@ -49,16 +47,17 @@ public class MovingSS
     {
         x1 += dx;
         x3 += dx; 
-        if ((x1 < 95) || (x1 >155))
+        if ((x1 < 100) || (x1 >150))
        {
           dx *= -1;
         }
 
        y1 += dy1;
        y3 += dy1;
-       if ((y1 < 540)||(y1 > 560))
+       if ((y1 < 545)||(y1 > 555))
        {
            dy1 *= -1;
        }
+
     }
 }

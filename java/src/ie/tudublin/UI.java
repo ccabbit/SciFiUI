@@ -74,9 +74,9 @@ public class UI extends PApplet
         dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
         dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
 
-        bigCircle= new Dot(this, 190, 500, 250, 46, 139, 87);
+        bigCircle= new Dot(this, 190, 430, 220, 46, 139, 87);
 
-        ms = new MovingSS(this, 125, 540, 190, 410, 255, 540);
+        ms = new MovingSS(this, 130, 470, 190, 340, 260, 470);
  
         for(int i =0; i < sq1.length; i++)
         {
