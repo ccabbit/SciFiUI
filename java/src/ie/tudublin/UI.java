@@ -18,6 +18,7 @@ public class UI extends PApplet
     //Plates
     Plate p1;
     Plate p2;
+    Plate p3;
 
     
     MovingSq[] sq1 = new MovingSq[4];
@@ -46,16 +47,18 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(1200, 675);
+       size(1200, 675);
         // Use fullscreen instead of size to make your interface fullscreen
 		img = loadImage("images/galaxybg.jpg");
         //fullScreen(); 
     }
+   
 
     public void setup()
     {
         p1 = new Plate(this, 0, 0, 390, 675, 105,105,105);
         p2 = new Plate(this, 50, 300, 290, 50, 0, 0, 0);
+        p3 = new Plate(this, 230, 20, 110, 190, 0, 0, 0);
 
         radar = new Radar(this, 1, 120, height / 5, 100);
 		for(int i =0; i < eB.length; i++)
@@ -93,6 +96,9 @@ public class UI extends PApplet
         background(img);
         p1.render();
         p2.render();
+        p3.render();
+
+
         //energybar
         for(int i =0; i < eB.length; i++)
         {
