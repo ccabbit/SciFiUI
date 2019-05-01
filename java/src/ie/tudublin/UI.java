@@ -58,12 +58,12 @@ public class UI extends PApplet
     {
         p1 = new Plate(this, 0, 0, 390, 675, 105,105,105);
         p2 = new Plate(this, 50, 300, 290, 50, 0, 0, 0);
-        p3 = new Plate(this, 230, 20, 110, 160, 192,192,192);
+        p3 = new Plate(this, 260, 20, 110, 160, 192,192,192);
 
         radar = new Radar(this, 1, 120, height / 5, 100);
 		for(int i =0; i < eB.length; i++)
         {
-            eB[i] = new EnergyB(this, 250, 30 * (i+1), 70, 20, "" + (i+1)); 
+            eB[i] = new EnergyB(this, 280, 30 * (i+1), 70, 20, "" + (i+1)); 
         }
        
        
