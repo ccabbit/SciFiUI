@@ -6,6 +6,12 @@ import processing.core.PImage;
 
 public class UI extends PApplet
 {
+    Dot dt1;
+    Dot dt2;
+    Dot dt3;
+    Dot dt4;
+    Dot dt5;
+    Dot dt6;
     Plate p;
     MovingSS ms;
 	PImage img;
@@ -46,10 +52,16 @@ public class UI extends PApplet
         radar = new Radar(this, 1, 120, height / 5, 100);
 		e1 = new EnergyB(this, 250, 30, 70, 20, "1"); 
        // cm.add(new Comet(this, random(390,width), 0, 65, 255, 250, 250));
-        
+        dt1= new Dot(this, 100, 100, 10, 220, 20, 60);
+        dt2= new Dot(this, 130, 90, 10, 220, 20, 60);
+        dt3= new Dot(this, 200, 50, 10, 220, 20, 60);
+        dt4= new Dot(this, 50, 80, 10, 220, 20, 60);
+        dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
+        dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
+
         for(int i = 0; i < comets.length; i++)
         {
-            comets[i] = new Comet(this, random(390,width), 0, 65, 255, 250, 250);
+            comets[i] = new Comet(this, random(390,width), 0, 65, 226, 88, 34);
         }
     }
 
@@ -59,10 +71,14 @@ public class UI extends PApplet
     {
         background(img);
         p.render();
+        //energybar
 		e1.render();
         //e2 render();
+        
         radar.update();
         radar.render();
+        //dot for rader
+        dt1.render();
         for(int i = 0; i < comets.length; i++)
         {
             comets[i].render();

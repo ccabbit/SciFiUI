@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Comet
+public class Dot
 {
     private float x;
     private float y;
@@ -15,7 +15,7 @@ public class Comet
     
     UI ui;
 
-    public Comet (UI ui,float x, float y, float diameter, float r, float g, float b)
+    public Dot (UI ui,float x, float y, float diameter, float r, float g, float b)
     {
         this.ui = ui;
         this.x = x;
@@ -29,19 +29,9 @@ public class Comet
 
     public void render()
     {
-        ui.stroke(220,20,60);
+        ui.noStroke();
         ui.fill(r,g,b);
         ui.ellipse(x,y,diameter, diameter);
     }
 
-    //dropSpeed = 5;
-    public void move1()
-    {
-        y = y + ui.random(1,10);
-        if(y < 0 || y > ui.height)
-        {
-            y = 0;
-            x = ui.random(420,1170);
-        }
-    }
 }
