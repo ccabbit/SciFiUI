@@ -47,7 +47,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-       size(1200, 675);
+       size(1000, 562);
         // Use fullscreen instead of size to make your interface fullscreen
 		img = loadImage("images/galaxybg.jpg");
         //fullScreen(); 
