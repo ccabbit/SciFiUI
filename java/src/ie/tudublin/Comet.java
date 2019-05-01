@@ -11,7 +11,6 @@ public class Comet
     private float b;
     private float diameter;
     private float radius;
-    public float dropSpeed = 5;
     
     UI ui;
 
