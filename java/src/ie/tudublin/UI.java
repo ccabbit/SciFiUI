@@ -15,7 +15,7 @@ public class UI extends PApplet
     Plate p;
     MovingSS ms;
 	PImage img;
-	EnergyB e1;
+	EnergyB[] eB = new EnergyB[5];
     //ArrayList<Comet> cm = new ArrayList<Comet>();
     Comet[] comets = new Comet[6];
 
@@ -50,11 +50,15 @@ public class UI extends PApplet
         p = new Plate(this, 0, 0, 390, 675, "");
         //ms = new MovingSS(this, 785, 625, 795, 585, 805, 625);
         radar = new Radar(this, 1, 120, height / 5, 100);
-		e1 = new EnergyB(this, 250, 30, 70, 20, "1"); 
+		for(int i =0; i < eB.length; i++)
+        {
+            eB[i] = new EnergyB(this, 250, 30 * (i+1), 70, 20, "" + (i+1)); 
+        }
+       
        // cm.add(new Comet(this, random(390,width), 0, 65, 255, 250, 250));
         dt1= new Dot(this, 100, 100, 10, 220, 20, 60);
         dt2= new Dot(this, 130, 90, 10, 220, 20, 60);
-        dt3= new Dot(this, 200, 50, 10, 220, 20, 60);
+        dt3= new Dot(this, 120, 200, 10, 220, 20, 60);
         dt4= new Dot(this, 50, 80, 10, 220, 20, 60);
         dt5= new Dot(this, 150, 160, 10, 220, 20, 60);
         dt6= new Dot(this, 75, 140, 10, 220, 20, 60);
@@ -72,13 +76,22 @@ public class UI extends PApplet
         background(img);
         p.render();
         //energybar
-		e1.render();
+        for(int i =0; i < eB.length; i++)
+        {
+		eB[i].render();
+        }
         //e2 render();
         
         radar.update();
         radar.render();
         //dot for rader
         dt1.render();
+        dt2.render();
+        dt3.render();
+        dt4.render();
+        dt5.render();
+        dt6.render();
+
         for(int i = 0; i < comets.length; i++)
         {
             comets[i].render();
